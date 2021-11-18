@@ -13,12 +13,11 @@ interface Props {
 
 export const AppDateRangePicker = ({ dateRange, setDateRange }: Props) => {
   return (
-    <LocalizationProvider
-      dateAdapter={DateFnsAdapter}
-      dateFormats={{ keyboardDate: 'yyyy-MM-dd' }}>
+    <LocalizationProvider dateAdapter={DateFnsAdapter} dateFormats={{ keyboardDate: 'yyyy-MM-dd' }}>
       <DateRangePicker
-        startText="From"
-        endText="To"
+        mask='____-__-__'
+        startText='From'
+        endText='To'
         value={dateRange}
         maxDate={new Date()}
         onChange={(newValue) => {
